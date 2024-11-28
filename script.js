@@ -1,5 +1,5 @@
 // Lien de votre site
-const siteLink = "https://votre-site.com"; // Remplacez cela par l'URL de votre site
+const siteLink = "https://craftgx.github.io/cipherclear/"; // Remplacez cela par l'URL de votre site
 
 // Fonction de cryptage et décryptage avec le chiffrement de César
 function caesarCipher(str, shift) {
