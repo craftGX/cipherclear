@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cipher Clear</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="marquee">
+        <p>
+          1- Type your text and choose your encryption number,encrypt, then send it via gmail or
+          whatsapp
+        </p>
+        <p>2- Put your encrypted text and your encrypted key, then press the decryption button</p>
+        <p>--Email: stefsouss@gmail.com/Youtube Channel: stefoufou and co--</p>
+      </div>
+      <h1>Cipher Clear</h1>
+      <textarea id="monTexte" placeholder="Enter your text here"></textarea>
+      <h1>Enter a Number</h1>
+      <input type="number" id="monChiffre" placeholder="Enter a number here" />
+      <h1>Encryption Options</h1>
+      <button id="encryptButton">Encrypt</button>
+      <button id="decryptButton">Decrypt</button>
+      <h1>Share Options</h1>
+      <a href="mailto:example@gmail.com" id="gmailButton">
+        <button>Send via Gmail</button>
+      </a>
+      <a href="https://wa.me/?text=Hello%20World" id="whatsappButton" target="_blank">
+        <button>Send via WhatsApp</button>
+      </a>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
