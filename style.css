@@ -4,69 +4,75 @@ html {
 
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Permet l'empilement vertical */
+  justify-content: flex-start;
   align-items: center;
-  height: 100vh;
   margin: 0;
   background-color: black;
   color: white;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  min-height: 100vh; /* Permet à la page de prendre toute la hauteur sans forcer */
 }
+
 .marquee {
-  width: 100%; /* Prend toute la largeur du conteneur */
-  background-color: transparent; /* Pas de fond pour la section marquee */
-  color: #0f0; /* Vert fluo */
-  font-size: 12px; /* Taille de police de 12px */
-  display: flex; /* Utilisation de flexbox pour aligner le texte */
-  flex-direction: column; /* Aligne les paragraphes en colonne */
-  align-items: center; /* Aligne le texte à gauche */
-  margin: 0; /* Enlève les marges par défaut */
-  padding: 5px 0; /* Padding vertical pour le confort */
+  width: 100%;
+  background-color: transparent;
+  color: #0f0;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Espace sous le texte */
+  padding: 5px 0;
+  line-height: 1.4;
 }
 
 .marquee p {
-  margin: 0; /* Enlève les marges pour chaque paragraphe */
-  line-height: 1.2; /* Ajuste l'espacement entre les lignes */
+  margin: 0;
 }
+
 .container {
   width: 1000px;
-  height: 600px;
+  max-width: 100%;
   background-color: #222;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre le contenu horizontalement */
-  justify-content: center; /* Centre le contenu verticalement */
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
   font-size: 24px;
   margin: 10px 0;
-  color: #0ff; /* Bleu fluo */
-  text-align: center; /* Centre le texte */
+  color: #0ff;
+  text-align: center;
 }
 
 #monTexte {
   width: 500px;
+  max-width: 100%;
   height: 200px;
   padding: 10px;
-  margin: 8px auto; /* Centre l'input horizontalement */
-  border: 2px solid #0ff; /* Bordure bleu fluo */
+  margin: 8px auto;
+  border: 2px solid #0ff;
   border-radius: 5px;
   background-color: #333;
   color: white;
   font-size: 16px;
-  display: block; /* Nécessaire pour centrer avec margin auto */
-  resize: none; /* Empêche le redimensionnement de l'input */
-  vertical-align: top; /* Aligne le texte en haut */
+  resize: none;
+  vertical-align: top;
 }
 
 input[type="number"] {
   width: 160px;
+  max-width: 100%;
   padding: 10px;
   margin: 8px 0;
-  border: 2px solid #0ff; /* Bordure bleu fluo */
+  border: 2px solid #0ff;
   border-radius: 5px;
   background-color: #333;
   color: white;
@@ -78,11 +84,13 @@ button {
   margin: 5px;
   font-size: 16px;
   color: black;
-  background-color: #0f0; /* Vert fluo */
+  background-color: #0f0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.4s;
+  width: 160px;
+  max-width: 100%;
 }
 
 button:hover {
@@ -95,50 +103,71 @@ a {
   text-decoration: none;
 }
 
-/* Styles Responsive */
-@media (max-width: 800px) {
+/* Responsive (inchangé, voir précédente réponse) */
+@media (max-width: 1200px) {
   .container {
-    width: 90%; /* 90% de la largeur de l'écran */
-    height: auto; /* Laisser la hauteur s'ajuster */
-    padding: 10px; /* Réduire le padding */
-  }
-
-  h1 {
-    font-size: 20px; /* Réduire la taille des titres */
+    width: 90%;
+    padding: 15px;
   }
 
   #monTexte {
-    width: 80%; /* Utiliser toute la largeur disponible */
-    height: 200px; /* Réduire la hauteur */
-    font-size: 14px; /* Réduire la taille de la police */
+    font-size: 15px;
   }
 
-  input[type="number"] {
-    width: 80%; /* Utiliser toute la largeur disponible */
-    max-width: 160px; /* Limite la largeur à 160px */
-  }
-
+  input[type="number"],
   button {
-    width: 80%; /* Rendre les boutons plein largeur */
-    font-size: 14px; /* Réduire la taille de la police */
+    font-size: 15px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1023px) {
   h1 {
-    font-size: 18px; /* Réduire encore plus la taille des titres */
+    font-size: 20px;
   }
 
   #monTexte {
-    height: 150px; /* Réduire encore la hauteur */
-    font-size: 12px; /* Réduire encore la taille de la police */
+    height: 180px;
+    font-size: 14px;
   }
 
-  input[type="number"] {
-    max-width: 100%; /* Assure que l'input ne déborde pas */
-  }
-
+  input[type="number"],
   button {
-    font-size: 12px; /* Réduire la taille de la police des boutons */
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  #monTexte {
+    height: 150px;
+    font-size: 13px;
+  }
+
+  input[type="number"],
+  button {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 399px) {
+  h1 {
+    font-size: 16px;
+  }
+
+  #monTexte {
+    height: 130px;
+    font-size: 12px;
+  }
+
+  input[type="number"],
+  button {
+    font-size: 12px;
   }
 }
