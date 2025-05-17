@@ -9,22 +9,224 @@
       href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+
     <title>Cipher Clear</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: "Chakra Petch", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column; /* Permet l'empilement vertical */
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0;
+        background-color: black;
+        color: white;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        min-height: 100vh; /* Permet à la page de prendre toute la hauteur sans forcer */
+      }
+
+      .marquee {
+        width: 100%;
+        background-color: transparent;
+        color: #0f0;
+        font-size: 14px; /* Taille de base plus lisible */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* alignement plus naturel pour les longues phrases */
+        margin-bottom: 20px;
+        padding: 5px 10px;
+        line-height: 1.6;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: left;
+        box-sizing: border-box;
+      }
+
+      .marquee p {
+        margin: 6px 0;
+        width: 100%;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1000px;
+        background-color: #222;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin: 10px 0;
+        color: #0ff;
+        text-align: center;
+      }
+
+      #monTexte {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        padding: 10px;
+        margin: 8px auto;
+        border: 2px solid #0ff;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+        font-size: 16px;
+        resize: none;
+        vertical-align: top;
+      }
+
+      input[type="number"] {
+        width: 160px;
+        max-width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 2px solid #0ff;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px 15px;
+        margin: 5px;
+        font-size: 16px;
+        color: black;
+        background-color: #0f0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.4s;
+        width: 160px;
+        max-width: 100%;
+      }
+
+      button:hover {
+        background-color: #0c0;
+        color: white;
+        scale: 0.9;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* Responsive (inchangé, voir précédente réponse) */
+      @media (max-width: 1200px) {
+        .container {
+          width: 90%;
+          padding: 15px;
+        }
+
+        #monTexte {
+          font-size: 15px;
+        }
+
+        input[type="number"],
+        button {
+          font-size: 15px;
+        }
+      }
+
+      @media (max-width: 1023px) {
+        h1 {
+          font-size: 20px;
+        }
+
+        #monTexte {
+          height: 180px;
+          font-size: 14px;
+        }
+
+        input[type="number"],
+        button {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .container {
+          padding: 10px;
+        }
+
+        h1 {
+          font-size: 18px;
+        }
+
+        #monTexte {
+          height: 150px;
+          font-size: 13px;
+        }
+
+        input[type="number"],
+        button {
+          font-size: 13px;
+        }
+      }
+
+      @media (max-width: 399px) {
+        h1 {
+          font-size: 16px;
+        }
+
+        #monTexte {
+          height: 130px;
+          font-size: 12px;
+        }
+
+        input[type="number"],
+        button {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .marquee {
+          font-size: 13px;
+          padding: 5px;
+        }
+
+        .marquee p {
+          font-size: 13px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <div class="marquee">
         <p>
-          1- Type your text and choose your encryption number,encrypt, then send it via gmail or
-          whatsapp
+          1- Tapez votre texte et choisissez votre nombre de cryptage, cryptez-le,copiez-collez dans
+          l'envoi par Gmail.N'oubliez pas de mettre le numéro de crypt!!!
         </p>
-        <p>2- Put your encrypted text and your encrypted key, then press the decryption button</p>
+        <p>
+          2- Entrez votre texte crypté et votre clé de cryptage, puis appuyez sur le bouton de
+          décryptage.
+        </p>
+        <p>
+          3- tu peux copier-coller ton message et ton code de crypt et l'envoyer par
+          WhatsApp,Messenger,Telegram...
+        </p>
         <p>--Email: stefsouss@gmail.com/Youtube Channel: stefoufou and co--</p>
       </div>
       <h1>Cipher Clear</h1>
-      <textarea id="monTexte" placeholder="Enter your text here"></textarea>
-      <h1>Enter a Number</h1>
+      <textarea id="monTexte" placeholder="Enter your text here "></textarea>
+      <h1>Enter a number for Encryption</h1>
       <input type="number" id="monChiffre" placeholder="Enter a number here" />
       <h1>Encryption Options</h1>
       <button id="encryptButton">Encrypt</button>
@@ -33,10 +235,73 @@
       <a href="mailto:example@gmail.com" id="gmailButton">
         <button>Send via Gmail</button>
       </a>
-      <a href="https://wa.me/?text=Hello%20World" id="whatsappButton" target="_blank">
-        <button>Send via WhatsApp</button>
-      </a>
     </div>
-    <script src="script.js"></script>
+    <script>
+      // Lien de votre site
+      const siteLink = "https://craftgx.github.io/cipherclear/"; // Remplacez cela par l'URL de votre site
+
+      // Fonction de cryptage et décryptage avec le chiffrement de César
+      function caesarCipher(str, shift) {
+        return str
+          .split("")
+          .map((char) => {
+            const code = char.charCodeAt(0);
+            // Vérifie si le caractère est une lettre majuscule
+            if (code >= 65 && code <= 90) {
+              return String.fromCharCode(((code - 65 + shift + 26) % 26) + 65);
+            }
+            // Vérifie si le caractère est une lettre minuscule
+            if (code >= 97 && code <= 122) {
+              return String.fromCharCode(((code - 97 + shift + 26) % 26) + 97);
+            }
+            // Retourne le caractère inchangé
+            return char;
+          })
+          .join("");
+      }
+
+      // Fonction pour désactiver les boutons
+      function disableButtons() {
+        document.getElementById("encryptButton").disabled = true;
+        document.getElementById("decryptButton").disabled = true;
+      }
+
+      // Écouteur d'événements pour le bouton de cryptage
+      document.getElementById("encryptButton").addEventListener("click", function () {
+        const text = document.getElementById("monTexte").value;
+        const shift = parseInt(document.getElementById("monChiffre").value);
+
+        // Vérifie si le texte et le chiffre sont valides
+        if (text && !isNaN(shift)) {
+          const encryptedText = caesarCipher(text, shift);
+          document.getElementById("monTexte").value = encryptedText; // Affiche le texte crypté
+          updateShareLinks(encryptedText); // Met à jour les liens avec le texte crypté
+          disableButtons(); // Désactive les boutons après l'action
+        }
+      });
+
+      // Écouteur d'événements pour le bouton de décryptage
+      document.getElementById("decryptButton").addEventListener("click", function () {
+        const text = document.getElementById("monTexte").value;
+        const shift = parseInt(document.getElementById("monChiffre").value);
+
+        // Vérifie si le texte et le chiffre sont valides
+        if (text && !isNaN(shift)) {
+          const decryptedText = caesarCipher(text, -shift); // Utilise un décalage négatif pour déchiffrer
+          document.getElementById("monTexte").value = decryptedText; // Affiche le texte décrypté
+          updateShareLinks(decryptedText); // Met à jour les liens avec le texte décrypté
+          disableButtons(); // Désactive les boutons après l'action
+        }
+      });
+
+      // Mettre à jour les liens pour envoyer des messages via Gmail et WhatsApp
+      function updateShareLinks(encryptedText) {
+        const gmailButton = document.getElementById("gmailButton");
+
+        // Met à jour le lien Gmail
+        gmailButton.href = `mailto:example@gmail.com?subject=Message Crypté&body=${encodeURIComponent(
+          encryptedText
+        )}%0A%0A${encodeURIComponent(siteLink)}`;
+    </script>
   </body>
 </html>
