@@ -35,6 +35,8 @@
 
       .marquee {
         width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
         background-color: transparent;
         color: #0f0;
         font-size: 14px; /* Taille de base plus lisible */
@@ -208,21 +210,22 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <div class="marquee">
         <p>
-          1- Tapez votre texte et choisissez votre nombre de cryptage, cryptez-le,copiez-collez dans
-          l'envoi par Gmail.N'oubliez pas de mettre le numéro de crypt!!!
+          1 - Saisis ton texte, choisis un nombre pour le cryptage, puis crypte-le. Copie-colle
+          ensuite le message crypté dans ton email.
+          <strong>N’oublie pas d’indiquer le nombre utilisé pour le cryptage !</strong>
         </p>
         <p>
-          2- Entrez votre texte crypté et votre clé de cryptage, puis appuyez sur le bouton de
-          décryptage.
+          2 - Pour décrypter un message : colle le texte crypté, entre la clé utilisée pour le
+          cryptage, puis clique sur le bouton de décryptage.
         </p>
         <p>
-          3- tu peux copier-coller ton message et ton code de crypt et l'envoyer par
-          WhatsApp,Messenger,Telegram...
+          3 - Tu peux aussi copier-coller ton message crypté avec son code, puis l’envoyer via
+          WhatsApp, Messenger, Telegram, etc.
         </p>
-        <p>--Email: stefsouss@gmail.com/Youtube Channel: stefoufou and co--</p>
+        <p>-- Email : stefsouss@gmail.com / Chaîne YouTube : stefoufou and co --</p>
       </div>
       <h1>Cipher Clear</h1>
       <textarea id="monTexte" placeholder="Enter your text here "></textarea>
@@ -235,8 +238,8 @@
       <a href="mailto:example@gmail.com" id="gmailButton">
         <button>Send via Gmail</button>
       </a>
-    </div>
-    <scrip>
+    </main>
+    <script>
       // Lien de votre site
       const siteLink = "https://craftgx.github.io/cipherclear/"; // Remplacez cela par l'URL de votre site
 
@@ -302,7 +305,7 @@
         gmailButton.href = `mailto:example@gmail.com?subject=Message Crypté&body=${encodeURIComponent(
           encryptedText
         )}%0A%0A${encodeURIComponent(siteLink)}`;
-    }
+      }
     </script>
   </body>
 </html>
